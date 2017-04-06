@@ -4,7 +4,9 @@ import argparse
 import sys
 
 def blober(infile):
+    # create dictionary for sentence/sentiment rankings
     sentence_ranks = {}
+    # get tweets
     blob = TextBlob(open(infile, 'rb').read())
     for i in blob.sentences:
         sentence_ranks[i] = i.sentiment.polarity
@@ -19,5 +21,5 @@ def csv_writer(trend_name, ranks_d):
 
 if __name__ == "__main__":
     tr_name = "test"
-    in_f = sys.argv[1]
+    in_f = sys.argv[1] # use whole argument after script for filename
     csv_writer(tr_name, blober(in_f))

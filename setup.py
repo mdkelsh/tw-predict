@@ -9,5 +9,6 @@ setup(name='tw_predict',
       install_requires=[
           'textblob',
           'tweepy',
+          'simplejson',
       ],
       zip_safe=False)
